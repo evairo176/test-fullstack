@@ -1,0 +1,100 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Dicki Prasetya",
+    "description": "Test Api",
+    "version": "1.0.0",
+    "license": {
+      "name": "MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    },
+    "contact": {
+      "name": "evairo",
+      "url": "https://evairo-portofolio.vercel.app/",
+      "email": "semenjakpetang176@email.com"
+    }
+  },
+  "produces": ["application/json", "application/xml"],
+  "host": "localhost:5001",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/api/users/register": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "evairo1"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "semenjakpetang176@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/users/signin": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "example": "evairo1"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
